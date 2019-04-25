@@ -18,7 +18,6 @@
 #                                                   #
 #===================================================#
 
-
 #################
 # Set Variables #
 #################
@@ -35,6 +34,15 @@ HINT=${BLUE}'HINT:'${WHITE} #HINT MESSAGES
 
 # Get logged in username
 USERNAME=`awk -F'[/:]' '{if ($3 >= 1000 && $3 != 65534) print $1}' /etc/passwd | head -n 1` #Logged in username
+
+printf "Welcome to the ${GREEN}DIY HTPC${WHITE} setup script\n"
+printf "Credits to ${BLUE}Tomas-M${WHITE} and the hard work that went into ${BLUE}xlunch (https://github.com/Tomas-M)${WHITE} \n"
+printf "All and any logos and trademarks are owned by the respective companies. \n"
+printf "${RED}WARNING:${WHITE} This script is in the earliest of early stages and may be unpredicable. No real testing has taken place yet and may not ever. \n"
+printf "It was intended to make my life a little easier, so I hope it makes your life easier too! \n"
+printf " \n"
+printf "${HINT} Run this script as the user that will be logged when using our HTPC with sudo \n"
+
 
 ###############################
 # Check Script Is Run As root #
@@ -69,8 +77,8 @@ apt install -qq budgie-core budgie-showtime-applet gcc google-chrome-stable kodi
 ##################
 # Install Xlunch #
 ##################
-mkdir ~/xlunch
-cd ~/xlunch
+mkdir /home/${USERNAME}/xlunch
+cd /home/${USERNAME}/xlunch
 printf "${INFO} Downloading xlunch \n"
 wget https://github.com/Tomas-M/xlunch/archive/v4.4.0.tar.gz
 tar -xzvf v4.4.0.tar.gz
@@ -78,7 +86,7 @@ rm v4.4.0.tar.gz
 cd xlunch-4.4.0
 printf "${INFO} installing xlunch \n"
 make install
-cd ~/xlunch
+cd /home/${USERNAME}/xlunch
 rm -rf xlunch-4.4.0/
 
 ####################
@@ -92,13 +100,15 @@ rm master.zip
 chmod +x run.sh
 
 printf "${INFO} Setting default background \n"
-gsettings set org.gnome.desktop.background picture-uri "file:///home/${UNAME}/xlunch/images/wallpapers/wallpaper.png"
+gsettings set org.gnome.desktop.background picture-uri "file:///home/${USERNAME}/xlunch/images/wallpapers/wallpaper.png"
 
 printf "${INFO} Creating autostart entry for xlunch \n"
-cat > /home/${UNAME}/.config/autostart/xlunch.desktop << EOL
+cat > /home/${USERNAME}/.config/autostart/xlunch.desktop << EOL
 [Desktop Entry]
 Type=Application
 Name=xlunch launcher
 Description=xlunch launcher
-Exec=/home/${UNAME}/xlunch/run.sh
+Exec=/home/${USERNAME}/xlunch/run.sh
 EOL
+
+printf "${GREEN} Complete! ${WHITE} Restart your computer and enjoy. Look at the readme for extra steps to polish the look! \n"
