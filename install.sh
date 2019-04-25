@@ -81,12 +81,12 @@ apt install -qq budgie-core budgie-showtime-applet gcc google-chrome-stable kodi
 mkdir /home/${USERNAME}/xlunch
 cd /home/${USERNAME}/xlunch
 printf "${INFO} Downloading xlunch \n"
-wget https://github.com/Tomas-M/xlunch/archive/v4.4.0.tar.gz
-tar -xzvf v4.4.0.tar.gz
+wget https://github.com/Tomas-M/xlunch/archive/v4.4.0.tar.gz > /dev/null 2>&1
+tar -xzvf v4.4.0.tar.gz > /dev/null 2>&1c
 rm v4.4.0.tar.gz
 cd xlunch-4.4.0
 printf "${INFO} installing xlunch \n"
-make install
+make install > /dev/null 2>&1
 cd /home/${USERNAME}/xlunch
 rm -rf xlunch-4.4.0/
 
@@ -101,7 +101,7 @@ rm master.zip
 chmod +x run.sh
 
 printf "${INFO} Setting default background \n"
-gsettings set org.gnome.desktop.background picture-uri "file:///home/${USERNAME}/xlunch/images/wallpapers/wallpaper.png"
+gsettings set org.gnome.desktop.background picture-uri "file:///home/${USERNAME}/xlunch/images/wallpapers/wallpaper.png" > /dev/null 2>&1
 
 printf "${INFO} Creating autostart entry for xlunch \n"
 mkdir -p /home/${USERNAME}/.config/autostart
@@ -114,4 +114,4 @@ Exec=/home/${USERNAME}/xlunch/run.sh
 EOL
 
 chown -R ${USERNAME} /home/${USERNAME}/xlunch/
-printf "${GREEN} Complete! ${WHITE} Restart your computer and enjoy. Look at the readme for extra steps to polish the look! \n"
+printf "${GREEN}Complete! ${WHITE} Restart your computer and enjoy. Look at the readme for extra steps to polish the look! \n"
