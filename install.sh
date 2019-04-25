@@ -113,4 +113,5 @@ Description=xlunch launcher
 Exec=/home/${USERNAME}/xlunch/run.sh
 EOL
 
+chown -R ${USERNAME} /home/${USERNAME}/xlunch/
 printf "${GREEN} Complete! ${WHITE} Restart your computer and enjoy. Look at the readme for extra steps to polish the look! \n"
