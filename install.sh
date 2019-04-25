@@ -67,7 +67,7 @@ printf "${INFO} Adding Google Chrome repository \n"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - > /dev/null 2>&1 #chrome Web Browser
 printf "${INFO} Adding Spotify repository \n"
 echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list > /dev/null 2>&1 #Spotify Music Player
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90 > /dev/null 2>&1
 
 printf "${INFO} Running apt update \n"
 apt-get update -qq
