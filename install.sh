@@ -76,7 +76,7 @@ printf "${INFO} Installing dependancies and packages \n"
 apt install -qq budgie-core budgie-showtime-applet gcc google-chrome-stable kodi libimlib2-dev libx11-dev make samba spotify-client -y > /dev/null 2>&1
 
 ##################
-# Install Xlunch #
+# Install xlunch #
 ##################
 mkdir /home/${USERNAME}/xlunch
 cd /home/${USERNAME}/xlunch
@@ -91,11 +91,11 @@ cd /home/${USERNAME}/xlunch
 rm -rf xlunch-4.4.0/
 
 ####################
-# Configure Xlunch #
+# Configure xlunch #
 ####################
 printf "${INFO} Downloading xlunch HTPC configuration and resources \n"
 wget https://github.com/steveharsant/htpc/archive/master.zip
-unzip master.zip
+unzip -o master.zip
 cp -r ./htpc-master/* .
 rm master.zip
 chmod +x run.sh
