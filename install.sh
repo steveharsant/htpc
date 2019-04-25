@@ -104,6 +104,7 @@ printf "${INFO} Setting default background \n"
 gsettings set org.gnome.desktop.background picture-uri "file:///home/${USERNAME}/xlunch/images/wallpapers/wallpaper.png"
 
 printf "${INFO} Creating autostart entry for xlunch \n"
+mkdir -p /home/${USERNAME}/.config/autostart
 cat > /home/${USERNAME}/.config/autostart/xlunch.desktop << EOL
 [Desktop Entry]
 Type=Application
