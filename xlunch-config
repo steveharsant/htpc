@@ -1,0 +1,58 @@
+#----------------#
+# General Config #
+#----------------#
+dontquit
+noprompt
+selectonly
+textafter
+
+#--------------------------#
+# Grid Layout and Settings #
+#--------------------------#
+# Standard entries not being used, set to 1x1, icon size 0
+columns: 1
+rows: 1
+iconsize: 0
+
+# Set transparency
+highlightcolor: 00000000
+backgroundcolor: 00000000
+#---------#
+# Buttons #
+#---------#
+button: ./images/tiles/netflix.png;;25,25;google-chrome netflix.com --kiosk
+button: ./images/tiles/prime.png;;25,285;google-chrome 'amazon.co.uk/Amazon-Video/b?&node=3010085031' --kiosk
+button: ./images/tiles/kodi.png;;25,545;kodi
+button: ./images/tiles/chrome.png;;25,805;google-chrome
+button: ./images/tiles/spotify.png;;260,545;spotify --force-device-scale-factor=2
+button: ./images/tiles/weather.png;;260,805;google-chrome dakboard.com/app?p=d845cdbdc9c7d57af13e1a0c03d0e0b0 --kiosk
+button: ./images/tiles/bbc_news.png;;495,25;google-chrome bbc.co.uk/news/av/10318089/bbc-news-channel --kiosk
+button: ./images/tiles/bbc_iplayer.png;;495,285;google-chrome bbc.co.uk/iplayer --kiosk
+button: ./images/tiles/volumio.png;;495,545;notify-send 'Volumio' 'Feature Coming Soon...'
+button: ./images/tiles/guide.png;;495,805;google-chrome freesat.co.uk/tv-guide/ --kiosk
+button: ./images/tiles/ch4.png;;730,25;google-chrome channel4.com/on-demand --kiosk
+button: ./images/tiles/itv.png;;730,285;google-chrome itv.com/hub/itv --kiosk
+button: ./images/tiles/imdb.png;;730,805;google-chrome imdb.com --kiosk
+button: ./images/tiles/my5.png;;965,25;google-chrome my5.tv --kiosk
+button: ./images/tiles/itv2.png;;965,285;google-chrome itv.com/hub/itv2 --kiosk
+button: ./images/tiles/youtube.png;;965,545;google-chrome youtube.com/tv --kiosk
+button: ./images/tiles/putlocker.png;;965,805;google-chrome putlocker.vip --kiosk
+button: ./images/tiles/stv.png;;1200,25;google-chrome stv.tv --kiosk
+button: ./images/tiles/uktv.png;;1200,285;google-chrome uktvplay.uktv.co.uk --kiosk
+# button: ./images/tiles/time.png;;1435,25;notify-send 'Time' 'Stop it! That Tickles!' #This button is commented out to show the System Background with Clock
+button: ./images/tiles/wifi.png;;1435,285;gnome-control-center wifi
+button: ./images/tiles/bluetooth.png;;1435,545;gnome-control-center bluetooth
+button: ./images/tiles/volume.png;;1435,805;gnome-control-center sound
+button: ./images/tiles/settings.png;;1670,285;gnome-control-center
+button: ./images/tiles/restart.png;;1670,545;shutdown -r now
+button: ./images/tiles/shutdown.png;;1670,805;shutdown -h now
+
+#-------------#
+# Dummy Entry #
+#-------------#
+# Dummy entry set to hide all standard entries to allow for custom buttons.
+# Note: the first character is not a [space] character, but a blank character.
+# To not show a text name copy and paste this as the first character. This is due to xlunch requiring a text name field.
+# If a [space] character is used, text names can be unpredictable.
+entries:
+ ;;
